@@ -51,7 +51,8 @@ namespace baconsale.Controllers
 
         public IActionResult MovieList()
         {
-            return View(TempStorage.Movies);
+            /*return View(TempStorage.Movies);*/
+            return View(TempStorage.Movies.Where(m => m.Title != "Independence Day"));
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

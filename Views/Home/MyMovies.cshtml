@@ -7,25 +7,25 @@
 
 
 <div class="text-center">
-    <form method="post" asp-action="MyMovies">
+    <form method="post" asp-action="MyMovies" class="align-left" id="movie-form">
         <div>
-            <label asp-for="Category">Category:</label>
+            <label class="movie-form-label" asp-for="Category">Category:</label>
             <input asp-for="Category" id="Category" />
         </div>
         <div>
-            <label asp-for="Title">Title:</label>
+            <label class="movie-form-label" asp-for="Title">Title:</label>
             <input asp-for="Title" id="Title" />
         </div>
         <div>
-            <label asp-for="Year">Year:</label>
+            <label class="movie-form-label" asp-for="Year">Year:</label>
             <input asp-for="Year" id="Year" />
         </div>
         <div>
-            <label asp-for="Director">Director:</label>
+            <label class="movie-form-label" asp-for="Director">Director:</label>
             <input asp-for="Director" id="Director" />
         </div>
         <div>
-            <label asp-for="Rating">Rating:</label>
+            <label class="movie-form-label" asp-for="Rating">Rating:</label>
             <select asp-for="Rating" id="Rating">
                 <option value="">Select Rating</option>
                 <option value="G">G</option>
@@ -35,22 +35,24 @@
             </select>
         </div>
         <div>
-            <label asp-for="Edited">Edited</label>
-            <select asp-for="Edited" id="Edited">
-                <option value="">Select One</option>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-            </select>
+            <label class="movie-form-label">Edited:</label>
+            <input type="radio" asp-for="Edited" name="Edited" id="Edited" value="true">
+            <label>Yes</label>
+            <input type="radio" asp-for="Edited" name="Edited" id="Edited" value="false">
+            <label>No</label>
         </div>
         <div>
-            <label asp-for="LentTo">Lent to:</label>
+            <label class="movie-form-label" asp-for="LentTo">Lent to:</label>
             <input asp-for="LentTo" id="LentTo" />
         </div>
         <div>
-            <label asp-for="Notes">Notes:</label>
+            <label class="movie-form-label" asp-for="Notes">Notes:</label>
             <input asp-for="Notes" id="Notes" />
         </div>
-        <button type="submit" id="submitButton">Add Movie to List</button>
+        <div class="text-center">
+            <button type="submit" id="submitButton">Add Movie to List</button>
+        </div>
     </form>
+    <br />
     <div class=align-left asp-validation-summary="All"></div>
 </div>

@@ -88,14 +88,15 @@ body {
     background-color: #ddd;
 }
 
-#movies-table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: grey;
-    color: white;
-    padding-left: 6px;
-}
+    #movies-table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: grey;
+        color: white;
+        padding-left: 6px;
+        border: 1px solid white;
+    }
 
 .img-transform:hover {
     transform: scale(1.03);
@@ -106,4 +107,9 @@ body {
     text-align: left;
     display: inline-block;
     margin-left: -30px;
+}
+
+#movie-form > div > label {
+    width: 70px;
+    display:inline-block;
 }
