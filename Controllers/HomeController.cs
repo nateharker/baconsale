@@ -32,6 +32,7 @@ namespace baconsale.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public IActionResult MyMovies()
         {
@@ -41,6 +42,7 @@ namespace baconsale.Controllers
         [HttpPost]
         public IActionResult MyMovies(MovieResponse response)
         {
+            /*If the validation shows there isn't anything wrong with the values, add the movies to the storage and reload the page*/
             if(ModelState.IsValid)
             {
                 TempStorage.AddMovie(response);
@@ -51,7 +53,7 @@ namespace baconsale.Controllers
 
         public IActionResult MovieList()
         {
-            /*return View(TempStorage.Movies);*/
+            /*Returns list of movies, except for any with the title "Independence Day"*/
             return View(TempStorage.Movies.Where(m => m.Title != "Independence Day"));
         }
 

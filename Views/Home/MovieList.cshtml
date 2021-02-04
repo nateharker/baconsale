@@ -11,17 +11,18 @@
             <tr><th>Category</th><th>Title</th><th>Year</th><th>Director</th><th>Rating</th><th>Edited?</th><th>Lent To</th><th>Notes</th></tr>
         </thead>
         <tbody>
+            @*output each response in the movieresponse list into the following table*@
             @foreach (baconsale.Models.MovieResponse response in Model)
             {
             <tr>
-                <td>@response.Category</td>&nbsp;&nbsp;
-                <td>@response.Title</td>&nbsp;&nbsp;
-                <td>@response.Year</td>&nbsp;&nbsp;
-                <td>@response.Director</td>&nbsp;&nbsp;
-                <td>@response.Rating</td>&nbsp;&nbsp;
-                <td>@response.Edited</td>&nbsp;&nbsp;
-                <td>@response.LentTo</td>&nbsp;&nbsp;
-                <td>@response.Notes</td>&nbsp;&nbsp;
+                <td>@response.Category</td>
+                <td>@response.Title</td>
+                <td>@response.Year</td>
+                <td>@response.Director</td>
+                <td>@response.Rating</td>
+                <td>@response.Edited</td>
+                <td>@response.LentTo</td>
+                <td>@response.Notes</td>
             </tr>
             }
         </tbody>

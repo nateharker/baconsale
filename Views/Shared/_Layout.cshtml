@@ -9,6 +9,7 @@
     <link rel="icon" href="~/bacon.ico" />
 </head>
 <body>
+    @*Shared navigation*@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -36,16 +37,18 @@
             </div>
         </nav>
     </header>
+    @*Header for each page is loaded here*@
     <div class="text-center">
         <h1>@ViewBag.Header</h1>
     </div>
     <br />
+    @*body is rendered here*@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
+    @*Footer is added after the body is finished*@
     <footer class="border-top footer text-muted">
         <div class="container text-center">
             &copy; 2021 - baconsale

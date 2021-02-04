@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+/*Create model to hold a list of responses to the form*/
 namespace baconsale.Models
 {
     public class TempStorage
