@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Update Movie";
+    ViewBag.Header = "Update Movie";
+}
+
+@model baconsale.Models.MovieResponse
+@*Form to update movies on the list, input values are intially set to the values of the MovieREsponse object that is passed to the view by the controller*@
+<div class="text-center">
+    <form method="post" asp-action="UpdateConfirmation" class="align-left" id="movie-form">
+        <div>
+            <label class="movie-form-label" asp-for="Category">Category:</label>
+            <input asp-for="Category" id="Category" value="@Model.Category"/>
+        </div>
+        <div>
+            <label class="movie-form-label" asp-for="Title">Title:</label>
+            <input asp-for="Title" id="Title" value="@Model.Title"/>
+        </div>
+        <div>
+            <label class="movie-form-label" asp-for="Year">Year:</label>
+            <input asp-for="Year" id="Year" value="@Model.Year"/>
+        </div>
+        <div>
+            <label class="movie-form-label" asp-for="Director">Director:</label>
+            <input asp-for="Director" id="Director" value="@Model.Director"/>
+        </div>
+        <div>
+            <label class="movie-form-label" asp-for="Rating">Rating:</label>
+            <select asp-for="Rating" id="Rating" value="@Model.Rating">
+                <option value="">Select Rating</option>
+                <option value="G">G</option>
+                <option value="PG">PG</option>
+                <option value="PG-13">PG-13</option>
+                <option value="R">R</option>
+            </select>
+        </div>
+        <div>
+            <label class="movie-form-label">Edited:</label>
+            @*If statement checks what the value of the edited property is and checks one of the radio buttons*@
+            @if (Model.Edited == true)
+            {
+                <input type="radio" asp-for="Edited" name="Edited" id="Edited" value="true" checked>
+                <label>Yes</label>
+                <input type="radio" asp-for="Edited" name="Edited" id="Edited" value="false">
+                <label>No</label>
+            }
+            else if (Model.Edited == false)
+            {
+                <input type="radio" asp-for="Edited" name="Edited" id="Edited" value="true">
+                <label>Yes</label>
+                <input type="radio" asp-for="Edited" name="Edited" id="Edited" value="false" checked>
+                <label>No</label>
+            }
+            else
+            {
+                <input type="radio" asp-for="Edited" name="Edited" id="Edited" value="true">
+                <label>Yes</label>
+                <input type="radio" asp-for="Edited" name="Edited" id="Edited" value="false">
+                <label>No</label>
+            }
+
+        </div>
+        <div>
+            <label class="movie-form-label" asp-for="LentTo">Lent to:</label>
+            <input asp-for="LentTo" id="LentTo" value="@Model.LentTo"/>
+        </div>
+        <div>
+            <label class="movie-form-label" asp-for="Notes">Notes:</label>
+            <input asp-for="Notes" id="Notes" value="@Model.Notes"/>
+        </div>
+        <br />
+        <div class="text-center">
+            <button type="submit">Update Entry</button>
+        </div>
+    </form>
+    <br /><br />
+    <div class=align-left asp-validation-summary="All"></div>
+</div>

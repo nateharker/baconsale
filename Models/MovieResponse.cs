@@ -8,6 +8,9 @@ namespace baconsale.Models
 {
     public class MovieResponse
     {
+        [Key] //Unique identifier for each entry in the DB, automatically generated
+        [Required]
+        public int MovieResponseId { get; set; }
         [Required]
         public string Category{ get; set; }
         [Required]
